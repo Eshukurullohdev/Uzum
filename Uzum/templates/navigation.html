@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<div class="w-full h-[32px] bg-[#F0F2F5]">
+    <div class="container flex justify-between items-center h-full">
+        <div>
+            <i class="fa-solid fa-location-dot"></i>
+            <a class=" text-[#1F2026] text-sm" style="border-bottom: 1px solid #1F2026;" href="#">Toshkent</a>
+            <a class="!ml-4 inline-block text-[#1F2026] text-sm" href="#">Qabul qilish punkiti</a>
+        </div>
+        <div class="flex gap-4">
+            <a class="text-sm text-[#7000FE]" href="#">Sotuvchiga Aylaning</a> <span class="text-gray-200">|</span>
+            <a class="text-sm text-[#7000FE]" href="#">Qabul qilish punkitini oching</a>
+            <a class="text-sm" href="#">Savol va Javob</a>
+            <a class="text-sm" href="#">Mening Buyurtmalarim</a>
+            <div class="flex items-center gap-2">
+
+                <svg data-v-0e8a64de="" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" class="ui-icon ">
+                    <mask id="mask0_9302_12006" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                        width="20" height="20">
+                        <path
+                            d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z"
+                            fill="#F4F5F5"></path>
+                    </mask>
+                    <g mask="url(#mask0_9302_12006)">
+                        <rect width="20" height="20" fill="#0099B5"></rect>
+                        <rect y="13" width="20" height="7" fill="#1EB53A"></rect>
+                        <rect y="13" width="20" height="1" fill="#CE1126"></rect>
+                        <rect y="6" width="20" height="1" fill="#CE1126"></rect>
+                        <rect y="6.5" width="20" height="7" fill="white"></rect>
+                    </g>
+                </svg>
+                <span class="text-[13px]">O'zbekcha</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container flex justify-around items-center !mt-4 ">
+    <div class="flex items-center gap-2">
+        <img class="w-[25px] h-[25px] rounded-full"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-jybTGUSvxWxihbZMxwinqDCquA6PkMiC1Q&s" alt="">
+        <blockquote class="text-[#2C7AC7] font-bold">
+            Uzum market
+        </blockquote>
+    </div>
+    <div class="flex">
+        <button class="w-[120px] h-[40px] rounded-md bg-[#CECCFF] text-[#2C7AC7]"> <i
+                class="fa-brands fa-buffer !mr-2"></i>Katalog</button>
+        <input style="border: 1px solid #CECCFF; padding: 20px; outline: none;" class="w-[527px] h-[40px] relative"
+            type="Maxsulotlarni izlash" required placeholder="Maxsulotlarni izlash">
+        <div
+            class=" relative left-[-80.05px] top-[1px]   w-[80px] h-[40px] bg-[#EDEFF2] text-center text-gray-400 flex justify-center items-center ">
+            <i class="fa-solid fa-search"></i>
+        </div>
+    </div>
+    <div class="flex gap-4 items-center">
+        
+        <a>
+            <i class="fa-solid fa-user text-[18px] "></i>
+            <span class="text-[14px] !ml-2">Kirish</span>
+        </a>
+        <a>
+            <i class="fa-solid fa-heart text-[18px] "></i>
+            <span class="text-[14px] !ml-2 ">Saralangan</span>
+        </a>
+        <a>
+            <i class="fa-solid fa-cart-shopping text-[18px] "></i>
+            <span class="text-[14px] !ml-2">Savat</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
