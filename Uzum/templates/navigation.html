@@ -38,7 +38,7 @@
 </div>
 
 <div class="container flex justify-around items-center !mt-4 ">
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2 select-none">
         <img class="w-[25px] h-[25px] rounded-full"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-jybTGUSvxWxihbZMxwinqDCquA6PkMiC1Q&s" alt="">
         <blockquote class="text-[#2C7AC7] font-bold">
@@ -48,21 +48,21 @@
     <div class="flex">
         <button class="w-[120px] h-[40px] rounded-md bg-[#CECCFF] text-[#2C7AC7]"> <i
                 class="fa-brands fa-buffer !mr-2"></i>Katalog</button>
-        <input style="border: 1px solid #CECCFF; padding: 20px; outline: none;" class="w-[527px] h-[40px] relative"
+        <input style="border: 1px solid #CECCFF; padding: 20px; outline: none; margin-left: 10px;" class="w-[527px] h-[40px] relative"
             type="Maxsulotlarni izlash" required placeholder="Maxsulotlarni izlash">
         <div
-            class=" relative left-[-80.05px] top-[1px]   w-[80px] h-[40px] bg-[#EDEFF2] text-center text-gray-400 flex justify-center items-center ">
+            class=" relative left-[-80.05px] top-[1px] cursor-pointer  w-[80px] h-[40px] bg-[#EDEFF2] text-center text-gray-400 flex justify-center items-center ">
             <i class="fa-solid fa-search"></i>
         </div>
     </div>
     <div class="flex gap-4 items-center">
         
         <a>
-            <i class="fa-solid fa-user text-[18px] "></i>
+            <i class="fa-regular fa-user text-[18px] "></i>
             <span class="text-[14px] !ml-2">Kirish</span>
         </a>
         <a>
-            <i class="fa-solid fa-heart text-[18px] "></i>
+            <i class="fa-regular fa-heart text-[18px] "></i>
             <span class="text-[14px] !ml-2 ">Saralangan</span>
         </a>
         <a>
@@ -70,5 +70,36 @@
             <span class="text-[14px] !ml-2">Savat</span>
         </a>
     </div>
+
+</div>
+<div class="container gap-4 flex !mt-[40px]">
+    <div class="flex gap-4 items-center w-full">
+        <a class="flex items-center gap-2" href="#">
+            <img src="https://static.uzum.uz/fast_categories/TechSale.png" alt="24px" width="24px">
+            <span class="text-[12px] text-[#1f2026] font-bold">Texnika Arzonroq</span>
+        </a>
+        <a class="flex items-center gap-2" href="#">
+            <img src="https://static.uzum.uz/fast_categories/ZimOb.png" alt="24px" width="24px">
+            <span class="text-[12px] text-[#1f2026] font-bold">Qishki obrazlar</span>
+        </a>
+        <a class="flex items-center gap-2" href="#">
+            <img src="https://static.uzum.uz/fast_categories/Topsales.png" alt="24px" width="24px">
+            <span class="text-[12px] text-[#1f2026] font-bold">Hafta Tovarlari</span>
+        </a>
+        <a class="flex items-center gap-2" href="#">
+            <img src="https://static.uzum.uz/fast_categories/Licv.png" alt="24px" width="24px">
+            <span class="text-[12px] text-[#1f2026] font-bold">Tugatish</span>
+        </a>
+        <a class="flex items-center gap-2" href="#">
+            <img src="https://static.uzum.uz/fast_categories/%20vyg.png" alt="24px" width="24px">
+            <span class="text-[12px] text-[#1f2026] font-bold">Harkuni foyda</span>
+        </a>
+        <a href="#" class=" font-400 text-[14px] text-[#56575C] hover:text-[#2C7AC7] ">Elektronika</a>
+        <a href="#" class=" font-400 text-[14px] text-[#56575C] hover:text-[#2C7AC7]">Uy texnologiyasi</a>
+        <a href="#" class=" font-400 text-[14px] text-[#56575C] hover:text-[#2C7AC7]">Kiyim</a>
+        <a href="#" class=" font-400 text-[14px] text-[#56575C] hover:text-[#2C7AC7]">Poyabzallar</a>
+        <a href="#" class=" font-400 text-[14px] text-[#56575C] hover:text-[#2C7AC7]">Aksesuarlar</a>
+        <a href="#" class=" font-400 text-[14px] text-[#56575C] hover:text-[#2C7AC7]">Yana</a>
+    </div>  
 </div>
 {% endblock %}

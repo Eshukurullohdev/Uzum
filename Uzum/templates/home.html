@@ -1,4 +1,44 @@
-{% extends 'index.html' %}
-{%  block content %}
-<h1>Home</h1>
-{%  endblock %}
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item" style="background-image: url('https://images.uzum.uz/cu7mgitht56ksubekmjg/main_page_banner.jpg')"></div>
+          <div class="carousel-item" style="background-image: url('https://images.uzum.uz/cu9pgs5ht56ksubfbe2g/main_page_banner.jpg')"></div>
+          <div class="carousel-item" style="background-image: url('https://images.uzum.uz/cubuvhdht56ksubg0el0/main_page_banner.jpg')"></div>
+          <div class="carousel-item" style="background-image: url('https://images.uzum.uz/cubvu645j42bjc4as0kg/main_page_banner.jpg')"></div>
+        </div>
+        <div class="carousel-controls">
+            <i class="fa-solid fa-chevron-left control-btn" id="prevBtn"></i><i class="fa-solid fa-chevron-right control-btn" id="nextBtn"></i>
+          <!-- <button class="control-btn" id="prevBtn">&#8249;</button>
+          <button class="control-btn" id="nextBtn">&#8250;</button> -->
+        </div>
+      </div>
+    </div>
+    
+    
+        <div class="flex gap-4 items-center">
+            <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
+                <img class="w-[40px] h-[40px]" src="https://static.uzum.uz/static/promo_images/74ad8651-407e-4985-aca3-55aee75b69c9" alt="">
+                <span>Barchasi 49 ming so'mdan</span>
+            </div>  <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
+                <img class="w-[40px] h-[40px]" src="https://static.uzum.uz/static/promo_images/851cb346-7b83-46bb-b947-047c536297ae" alt="">
+                <span>Barchasi 99 ming so'mdan</span>
+            </div>  <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
+                <img class="w-[40px] h-[40px]" src="https://static.uzum.uz/static/promo_images/319ec161-f19d-4cd2-966a-fc5670566820" alt="">
+                <span>Elektr asboblar</span>
+            </div>  <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
+                <img class="w-[40px] h-[40px]" src="https://static.uzum.uz/static/promo_images/bf3b929c-4a84-4e2a-9e62-b52ed66d7875" alt="">
+                <span>Modali Garderob</span>
+            </div>
+        </div>
+  </div>
+  
+
+
+
+
+{% endblock %}
