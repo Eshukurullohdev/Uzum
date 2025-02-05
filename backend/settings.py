@@ -60,7 +60,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
-AUTH_USER_MODEL = 'Authentication.CustomUser'
 
 
 
@@ -110,7 +109,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 import os
 STATIC_URL = 'static/'
-STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
