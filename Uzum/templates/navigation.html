@@ -1,6 +1,4 @@
-{% extends 'index.html' %}
-{% load static %}
-{% block content %}
+
 <div class="w-full h-[32px] bg-[#F0F2F5]">
     <div class="container flex justify-between items-center h-full">
         <div>
@@ -57,7 +55,7 @@
     </div>
     <div class="flex gap-4 items-center">
         
-        <a>
+        <a class="hover:bg-[#EDEFF2] p-4 rounded-md px-4" href="{% url 'login' %}">
             <i class="fa-regular fa-user text-[18px] "></i>
             <span class="text-[14px] !ml-2">Kirish</span>
         </a>
@@ -102,4 +100,3 @@
         <a href="#" class=" font-400 text-[14px] text-[#56575C] hover:text-[#2C7AC7]">Yana</a>
     </div>  
 </div>
-{% endblock %}

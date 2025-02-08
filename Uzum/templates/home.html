@@ -3,41 +3,97 @@
 {% block content %}
 
 <div class="container">
-    <div class="carousel-wrapper">
-      <div class="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item" style="background-image: url('https://images.uzum.uz/cu7mgitht56ksubekmjg/main_page_banner.jpg')"></div>
-          <div class="carousel-item" style="background-image: url('https://images.uzum.uz/cu9pgs5ht56ksubfbe2g/main_page_banner.jpg')"></div>
-          <div class="carousel-item" style="background-image: url('https://images.uzum.uz/cubuvhdht56ksubg0el0/main_page_banner.jpg')"></div>
-          <div class="carousel-item" style="background-image: url('https://images.uzum.uz/cubvu645j42bjc4as0kg/main_page_banner.jpg')"></div>
-        </div>
-        <div class="carousel-controls">
-            <i class="fa-solid fa-chevron-left control-btn" id="prevBtn"></i><i class="fa-solid fa-chevron-right control-btn" id="nextBtn"></i>
-          <!-- <button class="control-btn" id="prevBtn">&#8249;</button>
+  
+  
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item"
+          style="background-image: url('https://images.uzum.uz/cu7mgitht56ksubekmjg/main_page_banner.jpg')"></div>
+        <div class="carousel-item"
+          style="background-image: url('https://images.uzum.uz/cu9pgs5ht56ksubfbe2g/main_page_banner.jpg')"></div>
+        <div class="carousel-item"
+          style="background-image: url('https://images.uzum.uz/cubuvhdht56ksubg0el0/main_page_banner.jpg')"></div>
+        <div class="carousel-item"
+          style="background-image: url('https://images.uzum.uz/cubvu645j42bjc4as0kg/main_page_banner.jpg')"></div>
+      </div>
+      <div class="carousel-controls">
+        <i class="fa-solid fa-chevron-left control-btn" id="prevBtn"></i><i
+          class="fa-solid fa-chevron-right control-btn" id="nextBtn"></i>
+        <!-- <button class="control-btn" id="prevBtn">&#8249;</button>
           <button class="control-btn" id="nextBtn">&#8250;</button> -->
-        </div>
       </div>
     </div>
-    
-    
-        <div class="flex gap-4 items-center">
-            <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
-                <img class="w-[40px] h-[40px]" src="https://static.uzum.uz/static/promo_images/74ad8651-407e-4985-aca3-55aee75b69c9" alt="">
-                <span>Barchasi 49 ming so'mdan</span>
-            </div>  <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
-                <img class="w-[40px] h-[40px]" src="https://static.uzum.uz/static/promo_images/851cb346-7b83-46bb-b947-047c536297ae" alt="">
-                <span>Barchasi 99 ming so'mdan</span>
-            </div>  <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
-                <img class="w-[40px] h-[40px]" src="https://static.uzum.uz/static/promo_images/319ec161-f19d-4cd2-966a-fc5670566820" alt="">
-                <span>Elektr asboblar</span>
-            </div>  <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
-                <img class="w-[40px] h-[40px]" src="https://static.uzum.uz/static/promo_images/bf3b929c-4a84-4e2a-9e62-b52ed66d7875" alt="">
-                <span>Modali Garderob</span>
-            </div>
-        </div>
   </div>
-  
 
+
+  <div class="flex gap-4 items-center">
+    <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
+      <img class="w-[40px] h-[40px]"
+        src="https://static.uzum.uz/static/promo_images/74ad8651-407e-4985-aca3-55aee75b69c9" alt="">
+      <span>Barchasi 49 ming so'mdan</span>
+    </div>
+    <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
+      <img class="w-[40px] h-[40px]"
+        src="https://static.uzum.uz/static/promo_images/851cb346-7b83-46bb-b947-047c536297ae" alt="">
+      <span>Barchasi 99 ming so'mdan</span>
+    </div>
+    <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
+      <img class="w-[40px] h-[40px]"
+        src="https://static.uzum.uz/static/promo_images/319ec161-f19d-4cd2-966a-fc5670566820" alt="">
+      <span>Elektr asboblar</span>
+    </div>
+    <div class="flex items-center justify-center gap-2 !mt-4 w-[300px] bg-[#EFEFEF] h-[60px] rounded-md">
+      <img class="w-[40px] h-[40px]"
+        src="https://static.uzum.uz/static/promo_images/bf3b929c-4a84-4e2a-9e62-b52ed66d7875" alt="">
+      <span>Modali Garderob</span>
+    </div>
+  </div>
+
+  <div class="!mt-[40px] mb-[40px] w-full">
+    <h1 class="text-bold !mb-4 text-[25px]">Mashhur <i class="fa-solid fa-arrow-right"></i></h1>
+    {% for uzum in uzums %}
+    <div class="flex gap-4  ">
+      <div>
+        <img class="w-[232px] h-[309px] rounded-md object-cover" src="{{ uzum.img.url }}" alt="">
+        <i class="fa-regular fa-heart text-[18px]  relative left-[200px] top-[-300px]"></i>
+        <p class="text-[12px] text-[#1f2026] pt-[10px] font-bold">
+          {{ uzum.description }}
+        </p>
+        <span class="text-[11px] text-[#7e818c]">⭐ 4.90 {{ uzum.sharh }}</span> <br>
+        <span class="w-[100px] h-[23px] bg-[#FFFF00] inline-block rounded-[5px] text-[13px]">{{ uzum.bolib_tolash}}
+          so'm/oy</span>
+        <div class="flex justify-between items-center ">
+          <div class="!mt-[20px]">
+            <span class="text-[11px] text-[#7e818c] line-through">{{ uzum.skidka}}</span> <br>
+            <span class="text-[14px] text-[#1f2026]">{{ uzum.narx}} so'm</span>
+          </div>
+          <svg data-v-530b2ed9="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg" class="ui-icon  add-cart-icon">
+            <path
+              d="M8 10V8H6V12.5C6 12.7761 5.77614 13 5.5 13C5.22386 13 5 12.7761 5 12.5V7H8C8 4.59628 9.95227 3 12 3C14.0575 3 16 4.70556 16 7H19V19.5C19 20.3284 18.3284 21 17.5 21H12.5C12.2239 21 12 20.7761 12 20.5C12 20.2239 12.2239 20 12.5 20H17.5C17.7761 20 18 19.7761 18 19.5V8H16V10H15V8H9V10H8ZM12 4C10.4477 4 9 5.20372 9 7H15C15 5.29444 13.5425 4 12 4Z"
+              fill="black"></path>
+            <path
+              d="M7.5 14C7.77614 14 8 14.2239 8 14.5V17H10.5C10.7761 17 11 17.2239 11 17.5C11 17.7761 10.7761 18 10.5 18H8V20.5C8 20.7761 7.77614 21 7.5 21C7.22386 21 7 20.7761 7 20.5V18H4.5C4.22386 18 4 17.7761 4 17.5C4 17.2239 4.22386 17 4.5 17H7V14.5C7 14.2239 7.22386 14 7.5 14Z"
+              fill="black"></path>
+          </svg>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  setTimeout(() => {
+    const alertBox = document.getElementById('alert-box');
+    if (alertBox) {
+      alertBox.style.transition = 'opacity 0.5s ease';
+      alertBox.style.opacity = '0';
+      setTimeout(() => alertBox.remove(), 500); // To'liq olib tashlash
+    }
+  }, 5000);
+</script>
 
 
 
