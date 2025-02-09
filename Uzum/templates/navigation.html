@@ -54,11 +54,17 @@
         </div>
     </div>
     <div class="flex gap-4 items-center">
-        
+        {% if request.user.is_authenticated %}
+        <a class="hover:bg-[#EDEFF2] p-4 rounded-md px-4" href="{% url 'logout' %}">
+            <i class="fa-solid fa-right-from-bracket text-[18px] "></i>
+            <span class="text-[14px] !ml-2">chiqish</span>
+        </a>
+        {% else %}
         <a class="hover:bg-[#EDEFF2] p-4 rounded-md px-4" href="{% url 'login' %}">
             <i class="fa-regular fa-user text-[18px] "></i>
             <span class="text-[14px] !ml-2">Kirish</span>
         </a>
+        {% endif %}
         <a>
             <i class="fa-regular fa-heart text-[18px] "></i>
             <span class="text-[14px] !ml-2 ">Saralangan</span>
