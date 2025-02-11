@@ -31,23 +31,35 @@
         />
       </div>
       <div>
-        <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
-        <input 
-          type="password" 
-          id="password" 
-          name="password" 
-          placeholder="Password" 
-          required
-          class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
+        <label for="password" class="block text-sm font-medium text-gray-600">Parol</label>
+        <div class="relative w-full">
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Parolni kiriting" 
+            required
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <button 
+            type="button" 
+            id="togglePassword" 
+            class="absolute right-3 top-3 text-gray-600 focus:outline-none">
+            👁️
+          </button>
+        </div>
       </div>
       <button 
         type="submit" 
         class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg"
       >
-        Login
+        Kirish
       </button>
     </form>
+
+    <div class="text-center mt-4">
+      <a href="{% url 'register' %}" class="text-blue-500 hover:text-blue-600">Ro'yxatdan o'tish</a>
+    </div>
 
   </div>
 
@@ -68,6 +80,16 @@
         }, 5000);
       }
     });
+
+    document.getElementById('togglePassword').addEventListener('click', function () {
+      const passwordInput = document.getElementById('password');
+      const passwordType = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', passwordType);
+      
+      // Ko'rsatish belgisini o'zgartirish
+      this.textContent = passwordType === 'password' ? '👁️' : '🙈';
+    });
+
   </script>
 </body>
 </html>
