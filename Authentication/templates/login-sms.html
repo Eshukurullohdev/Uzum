@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMS Yuborish</title>
+</head>
+<body>
+  <h2>Telefon raqamiga SMS yuborish</h2>
+  <form id="smsForm">
+    <label for="phone">Telefon raqami:</label>
+    <input type="text" id="phone" name="phone" placeholder="+998901234567" required />
+    <br>
+    <label for="message">Xabar matni:</label>
+    <input type="text" id="message" name="message" placeholder="Tasdiq kodingiz: 123456" required />
+    <br><br>
+    <button type="submit">SMS yuborish</button>
+  </form>
+
+  <div id="responseMessage"></div>
+
+  <script>
+    document.getElementById('smsForm').addEventListener('submit', async (event) => {
+      event.preventDefault(); // Form yuborilishini to'xtatadi
+
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      // POST so'rov yuborish
+      const response = await fetch('/api/send-sms/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ phone, message })
+      });
+
+      // Javobni ko'rsatish
+      const result = await response.json();
+      document.getElementById('responseMessage').textContent = result.message || result.error;
+    });
+  </script>
+</body>
+</html>

@@ -3,6 +3,11 @@ from django.contrib.auth import authenticate, login as auth_login  # loginni bos
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from decouple import config
+import requests
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 def login(request):
     if request.user.is_authenticated:
@@ -67,3 +72,33 @@ def register_view(request):
         return redirect('register')
     return render(request, 'register.html')
 
+
+
+
+
+# Infobip API konfiguratsiyasi
+API_URL = "38kp2v.api.infobip.com"
+API_KEY = "dcc7509b1aaaf08bf495f03bd9c8f9f2-449022bd-3b9f-48a1-82d0-0e7d306288e2"  # Infobip API kalitingizni shu yerga qo'ying
+
+API_KEY = config('dcc7509b1aaaf08bf495f03bd9c8f9f2-449022bd-3b9f-48a1-82d0-0e7d306288e2', default='dcc7509b1aaaf08bf495f03bd9c8f9f2-449022bd-3b9f-48a1-82d0-0e7d306288e2')
+@csrf_exempt
+def send_sms(request):
+    if request.method == 'POST':
+        try:
+            body = json.loads(request.body)
+            phone_number = body.get('phone')
+            message = body.get('message')
+
+            if not phone_number or not message:
+                return JsonResponse({'error': 'Telefon raqami va xabar kerak'}, status=400)
+
+            # Infobip yoki boshqa SMS xizmat integratsiyasi
+            print(f"SMS yuborildi: {phone_number} - {message}")
+
+            return JsonResponse({'message': f"{phone_number} raqamiga SMS yuborildi"})
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'JSON formatda noto\'g\'ri ma\'lumot'}, status=400)
+        # return JsonResponse({'error': "Faqat POST so'rovlari qabul qilinadi"}, status=405)
+    return render(request, 'login-sms.html')
+
+    

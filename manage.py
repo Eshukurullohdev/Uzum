@@ -20,3 +20,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+from decouple import config
+
+API_KEY = config('dcc7509b1aaaf08bf495f03bd9c8f9f2-449022bd-3b9f-48a1-82d0-0e7d306288e2', default='dcc7509b1aaaf08bf495f03bd9c8f9f2-449022bd-3b9f-48a1-82d0-0e7d306288e2')
