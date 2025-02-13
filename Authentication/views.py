@@ -21,7 +21,7 @@ def login(request):
 
         if user is not None:
             auth_login(request, user) 
-            messages.success(request, "Siz Login Sahifaziga keldingiz!")
+            messages.success(request, 'Siz Tizimga muvaffaqiyatli kirdingiz!')
             return redirect('home')
         else:
             messages.error(request, 'Login yoki parol noto‘g‘ri!')

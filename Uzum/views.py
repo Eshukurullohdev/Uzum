@@ -6,7 +6,6 @@ from decouple import config
 @login_required(login_url='login')
 def home(request):
     uzum = Uzum.objects.all()
-    messages.success(request, 'Siz Tizimga muvaffaqiyatli kirdingiz!')
     return render(request, 'home.html' , {'uzums': uzum})
 
 

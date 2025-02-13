@@ -12,7 +12,7 @@
     <input type="text" id="phone" name="phone" placeholder="+998901234567" required />
     <br>
     <label for="message">Xabar matni:</label>
-    <input type="text" id="message" name="message" placeholder="Tasdiq kodingiz: 123456" required />
+    <input type="text" id="message" name="message" placeholder="Tasdiq kodingiz: 123456" />
     <br><br>
     <button type="submit">SMS yuborish</button>
   </form>
@@ -21,24 +21,30 @@
 
   <script>
     document.getElementById('smsForm').addEventListener('submit', async (event) => {
-      event.preventDefault(); // Form yuborilishini to'xtatadi
-
-      const phone = document.getElementById('phone').value;
-      const message = document.getElementById('message').value;
-
-      // POST so'rov yuborish
-      const response = await fetch('/api/send-sms/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ phone, message })
+        event.preventDefault();
+      
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+      
+        const response = await fetch('https://38kp2v.api.infobip.com/sms/2/text/advanced', {
+          method: 'POST',
+          headers: {
+            'Authorization': 'dcc7509b1aaaf08bf495f03bd9c8f9f2-449022bd-3b9f-48a1-82d0-0e7d306288e2',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            messages: [{
+              from: 'InfoApp',
+              destinations: [{ to: phone }],
+              text: message
+            }]
+          })
+        });
+      
+        const result = await response.json();
+        document.getElementById('responseMessage').textContent = result.message || result.requestError?.serviceException?.text || 'Xatolik yuz berdi';
       });
-
-      // Javobni ko'rsatish
-      const result = await response.json();
-      document.getElementById('responseMessage').textContent = result.message || result.error;
-    });
+      
   </script>
 </body>
 </html>
