@@ -3,14 +3,15 @@
 {% block content %}
 
 <div class="container">
-  
+
   {% if messages %}
-  <div id="alert-box-home" class="fixed top-0 left-1/2 transform -translate-x-1/2 mt-5 z-50 w-96 !p-4 bg-green-50 border border-green-300 text-green-600 rounded-lg shadow-lg opacity-0 transition-all duration-500">
+  <div id="alert-box-home"
+    class="fixed top-0 left-1/2 transform -translate-x-1/2 mt-5 z-50 w-96 !p-4 bg-green-50 border border-green-300 text-green-600 rounded-lg shadow-lg opacity-0 transition-all duration-500">
     {% for message in messages %}
-      <p class="font-semibold">{{ loop.index }} {{ message }}</p>
+    <p class="font-semibold">{{ loop.index }} {{ message }}</p>
     {% endfor %}
   </div>
-{% endif %}
+  {% endif %}
   <div class="carousel-wrapper">
     <div class="carousel">
       <div class="carousel-inner">
@@ -58,35 +59,38 @@
 
   <div class="!mt-[40px] mb-[40px] w-full">
     <h1 class="text-bold !mb-4 text-[25px]">Mashhur <i class="fa-solid fa-arrow-right"></i></h1>
+
     {% for uzum in uzums %}
-    <div class="flex gap-4  ">
-      <div>
-        <img class="w-[232px] h-[309px] rounded-md object-cover" src="{{ uzum.img.url }}" alt="">
-        <i class="fa-regular fa-heart text-[18px]  relative left-[200px] top-[-300px]"></i>
-        <p class="text-[12px] text-[#1f2026] pt-[10px] font-bold">
-          {{ uzum.description }}
-        </p>
-        <span class="text-[11px] text-[#7e818c]">⭐ 4.90 {{ uzum.sharh }}</span> <br>
-        <span class="w-[100px] h-[23px] bg-[#FFFF00] inline-block rounded-[5px] text-[13px]">{{ uzum.bolib_tolash}}
-          so'm/oy</span>
-        <div class="flex justify-between items-center ">
-          <div class="!mt-[20px]">
-            <span class="text-[11px] text-[#7e818c] line-through">{{ uzum.skidka}}</span> <br>
-            <span class="text-[14px] text-[#1f2026]">{{ uzum.narx}} so'm</span>
+    <a href="{% url 'tovar' tovar_id=uzum.id  %}">
+      <div class="flex gap-4  ">
+        <div>
+          <img class="w-[232px] h-[309px] rounded-md object-cover" src="{{ uzum.img.url }}" alt="">
+          <i class="fa-regular fa-heart text-[18px]  relative left-[200px] top-[-300px]"></i>
+          <p class="text-[12px] text-[#1f2026] pt-[10px] font-bold">
+            {{ uzum.description }}
+          </p>
+          <span class="text-[11px] text-[#7e818c]">⭐ 4.90 {{ uzum.sharh }}</span> <br>
+          <span class="w-[100px] h-[23px] bg-[#FFFF00] inline-block rounded-[5px] text-[13px]">{{ uzum.bolib_tolash}}
+            so'm/oy</span>
+          <div class="flex justify-between items-center ">
+            <div class="!mt-[20px]">
+              <span class="text-[11px] text-[#7e818c] line-through">{{ uzum.skidka}}</span> <br>
+              <span class="text-[14px] text-[#1f2026]">{{ uzum.narx}} so'm</span>
+            </div>
+            <svg data-v-530b2ed9="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg" class="ui-icon  add-cart-icon">
+              <path
+                d="M8 10V8H6V12.5C6 12.7761 5.77614 13 5.5 13C5.22386 13 5 12.7761 5 12.5V7H8C8 4.59628 9.95227 3 12 3C14.0575 3 16 4.70556 16 7H19V19.5C19 20.3284 18.3284 21 17.5 21H12.5C12.2239 21 12 20.7761 12 20.5C12 20.2239 12.2239 20 12.5 20H17.5C17.7761 20 18 19.7761 18 19.5V8H16V10H15V8H9V10H8ZM12 4C10.4477 4 9 5.20372 9 7H15C15 5.29444 13.5425 4 12 4Z"
+                fill="black"></path>
+              <path
+                d="M7.5 14C7.77614 14 8 14.2239 8 14.5V17H10.5C10.7761 17 11 17.2239 11 17.5C11 17.7761 10.7761 18 10.5 18H8V20.5C8 20.7761 7.77614 21 7.5 21C7.22386 21 7 20.7761 7 20.5V18H4.5C4.22386 18 4 17.7761 4 17.5C4 17.2239 4.22386 17 4.5 17H7V14.5C7 14.2239 7.22386 14 7.5 14Z"
+                fill="black"></path>
+            </svg>
           </div>
-          <svg data-v-530b2ed9="" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg" class="ui-icon  add-cart-icon">
-            <path
-              d="M8 10V8H6V12.5C6 12.7761 5.77614 13 5.5 13C5.22386 13 5 12.7761 5 12.5V7H8C8 4.59628 9.95227 3 12 3C14.0575 3 16 4.70556 16 7H19V19.5C19 20.3284 18.3284 21 17.5 21H12.5C12.2239 21 12 20.7761 12 20.5C12 20.2239 12.2239 20 12.5 20H17.5C17.7761 20 18 19.7761 18 19.5V8H16V10H15V8H9V10H8ZM12 4C10.4477 4 9 5.20372 9 7H15C15 5.29444 13.5425 4 12 4Z"
-              fill="black"></path>
-            <path
-              d="M7.5 14C7.77614 14 8 14.2239 8 14.5V17H10.5C10.7761 17 11 17.2239 11 17.5C11 17.7761 10.7761 18 10.5 18H8V20.5C8 20.7761 7.77614 21 7.5 21C7.22386 21 7 20.7761 7 20.5V18H4.5C4.22386 18 4 17.7761 4 17.5C4 17.2239 4.22386 17 4.5 17H7V14.5C7 14.2239 7.22386 14 7.5 14Z"
-              fill="black"></path>
-          </svg>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
+    </a>
   </div>
 </div>
 
@@ -96,13 +100,13 @@
     if (alertBox) {
       // Tepadagi xabarni sekin tushirish
       alertBox.classList.add('opacity-100', 'translate-y-5');
-      
+
       // Xabarni 5 soniyadan keyin animatsiya bilan yo'q qilish
       setTimeout(() => {
         alertBox.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
         alertBox.style.transform = 'translateY(-100px)';
         alertBox.style.opacity = '0';
-        
+
         setTimeout(() => alertBox.remove(), 500); // Elementni to'liq olib tashlash
       }, 5000);
     }
