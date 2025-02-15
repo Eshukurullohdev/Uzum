@@ -15,7 +15,7 @@
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     position: relative;
-    margin-left: 100px;
+ 
   }
   .carousel-inner {
     display: flex;
@@ -56,7 +56,7 @@
     overflow: hidden;
 }
 .carousel {
-    width: 50%;
+    width: 100%;
 }
 .carousel img {
     width: 63px;
