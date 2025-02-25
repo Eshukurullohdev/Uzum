@@ -61,7 +61,7 @@
     <h1 class="text-bold !mb-4 text-[25px]">Mashhur <i class="fa-solid fa-arrow-right"></i></h1>
 
     {% for uzum in uzums %}
-    <a href="{% url 'tovar' tovar_id=uzum.id  %}">
+    <a href="{% url 'tovar' uzum.unique_id %}">
       <div class="flex gap-4  ">
         <div>
           <img class="w-[232px] h-[309px] rounded-md object-cover" src="{{ uzum.img.url }}" alt="">

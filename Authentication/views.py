@@ -3,7 +3,6 @@ from django.contrib.auth import authenticate, login as auth_login  # loginni bos
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.models import User
 from django.contrib import messages
-from decouple import config
 import requests
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -77,10 +76,7 @@ def register_view(request):
 
 
 # Infobip API konfiguratsiyasi
-API_URL = "38kp2v.api.infobip.com"
-API_KEY = "dcc7509b1aaaf08bf495f03bd9c8f9f2-449022bd-3b9f-48a1-82d0-0e7d306288e2"  # Infobip API kalitingizni shu yerga qo'ying
 
-API_KEY = config('dcc7509b1aaaf08bf495f03bd9c8f9f2-449022bd-3b9f-48a1-82d0-0e7d306288e2', default='dcc7509b1aaaf08bf495f03bd9c8f9f2-449022bd-3b9f-48a1-82d0-0e7d306288e2')
 @csrf_exempt
 def send_sms(request):
     if request.method == 'POST':
