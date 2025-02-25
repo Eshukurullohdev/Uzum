@@ -3,19 +3,17 @@ from .models import Uzum
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from decouple import config
+
 @login_required(login_url='login')
 def home(request):
     uzum = Uzum.objects.all()
     return render(request, 'home.html' , {'uzums': uzum})
 
-
 def navigation(request):
     return render(request, 'navigation.html')
 
-
 def banner(request):
     return render(request, 'banner.html')
-
 
 
 API_URL = "38kp2v.api.infobip.com"
