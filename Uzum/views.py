@@ -14,5 +14,3 @@ def navigation(request):
 
 def banner(request):
     return render(request, 'banner.html')
-
-

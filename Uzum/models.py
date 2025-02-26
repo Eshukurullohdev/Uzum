@@ -9,6 +9,7 @@ class Uzum(models.Model):
     skidka = models.IntegerField(default=0)
     narx = models.IntegerField(default=0)
     
+    
     unique_id = models.CharField(
         max_length=90,
         validators=[
