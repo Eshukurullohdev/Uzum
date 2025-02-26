@@ -94,7 +94,6 @@ def send_sms(request):
             return JsonResponse({'message': f"{phone_number} raqamiga SMS yuborildi"})
         except json.JSONDecodeError:
             return JsonResponse({'error': 'JSON formatda noto\'g\'ri ma\'lumot'}, status=400)
-        # return JsonResponse({'error': "Faqat POST so'rovlari qabul qilinadi"}, status=405)
     return render(request, 'login-sms.html')
 
     

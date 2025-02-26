@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
 }
+
 .carousel-wrapper {
   display: flex;
   margin-top: 50px;
   justify-content: center;
 }
+
 .carousel {
   width: 100%;
   max-width: 1200px;
