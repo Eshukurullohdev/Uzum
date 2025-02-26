@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.validators import RegexValidator
 
+import uuid
+
 class Uzum(models.Model):
     img = models.ImageField(upload_to='images/')
     description = models.CharField(max_length=100)
@@ -27,6 +29,11 @@ class Uzum(models.Model):
         help_text="bu yerga hechnarsa kiritilmaydi",
 
     )
+    
+    def save(self):
+        if not self.unique_id:
+            self.unique_id = uuid.uuid4()
+        return super().save()
     
     def __str__(self):
         return self.description
