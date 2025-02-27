@@ -34,9 +34,8 @@
         </div>
         <div>
             <div class="w-[815px]">
-                <h2 class="text-[24px] text-[#1f22026] font-semibold">Oshxona anjomlarining sovg'a to'plami Kukmara №20,
-                    AP
-                    liniyasi Marmar, Тo'q marmar</h2>
+              
+                <h2 class="text-[24px] text-[#1f22026] font-semibold">{{tovar.tavsif}}</h2>
                 <div class="text-[#7E8190] text-sm">
                     <span>⭐⭐⭐⭐</span>
                     <span>5 (130 sharh)</span>
@@ -46,7 +45,7 @@
                 <div class="relative h-[350px]">
                     <div class="swiper mySwiper absolute right-[368px]">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img class="rounded-md" src="/static/img/tovar1.jpg" width="63px"
+                            <div class="swiper-slide"><img class="rounded-md" src="{{  tovar.imgs.url}}" width="63px"
                                     height="83px"></div>
                             <div class="swiper-slide"><img class="rounded-md" src="/static/img/tovar2.jpg" width="63px"
                                     height="83px"></div>
@@ -93,19 +92,21 @@
                                 <!-- <button class="control-btn" id="prevBtn">&#8249;</button>
                             <button class="control-btn" id="nextBtn">&#8250;</button> -->
                             </div>
+                            
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="!mt-[20px] flex gap-4">
                         <div>
-                            <span class="text-[18px] font-bold">4.9</span>
+                            <span class="text-[18px] font-bold"></span>
                             <span>⭐⭐⭐⭐</span>
                         </div>
                         <div>
-                            <span style="border-bottom: 1px solid #C5C6CC;" class="text-[14px] text-[#C5C6CC]">222
+                            <span style="border-bottom: 1px solid #C5C6CC;" class="text-[14px] text-[#C5C6CC]">{{ tovar.sharhi }}
                                 sharh</span>
                         </div>
+                        
                     </div>
                     <div class="flex gap-4 items-center !mt-[20px]">
                         <img class="rounded-[10px]" src="/static/img/tovar1.jpg" alt="" width="82px" height="82px">
@@ -155,6 +156,7 @@
                         </div>
                     </div>
                 </div>
+               
             </div>
         </div>
     </div>
@@ -162,9 +164,9 @@
         <h1 class="text-[#7F4DFF] text-[14px] font-semibold">O'lchamlar haqida batafsil</h1>
         <div class="!mt-[40px] !p-[20px]  w-[355px] h-[410px] border border-[#C5C6CC] rounded-[20px] ">
             <div class="flex gap-2 items-center">
-                <span class="text-[28px] font-semibold">78 000 so'm</span>
-                <span class="text-[#C5C6CC] font-semibold line-through tracking-tight">189 so'm</span>
-                <button class="w-[44px] h-[22px] bg-[#FFFF00] font-semibold text-[12px] rounded-[50px]">-59%</button>
+                <span class="text-[28px] font-semibold">{{  tovar.assl_narx}} so'm</span>
+                <span class="text-[#C5C6CC] font-semibold line-through tracking-tight">{{  tovar.skidkasi}} so'm</span>
+                <button class="w-[44px] h-[22px] bg-[#FFFF00] font-semibold text-[12px] rounded-[50px]">{{ tovar.foizi }}%</button>
             </div>
             <div class="w-[313px] !p-[10px] h-[93px] bg-[#E9EBF0]  rounded-[10px]">
                 <div
@@ -190,6 +192,7 @@
                     <i class="text-[24px] fa-regular fa-heart"></i>
                 </div>
             </div>
+            
             <button class="!mt-4 w-full text-white h-[48px] bg-[#7000FF] rounded-[10px]">Savatga qo'shish</button>
             <div class="flex items-center !mt-4 gap-2">
                 <div class="w-[32px] h-[32px] bg-[#EBFAEE] rounded-[10px] flex justify-center items-center ">
