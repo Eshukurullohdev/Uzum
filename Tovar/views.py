@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from .models import Tovars
-from django.shortcuts import get_object_or_404
+from Uzum.models import Uzum
 def  tovar(request, id):
-    try:
-         tovars = Tovars.objects.filter(id=id).exists()
-    except Tovars.DoesNotExist:
-        return render(request, '404.html')
-    return render(request, 'tovar.html' , {'tovars': tovars})
+    try: 
+        detail = Uzum.objects.filter(unique_id=id).first()
+    except Uzum.DoesNotExist:
+        detail = None
+    return render(request, 'tovar.html' , {'detail': detail} ,)

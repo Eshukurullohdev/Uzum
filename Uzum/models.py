@@ -5,6 +5,7 @@ import uuid
 
 class Uzum(models.Model):
     img = models.ImageField(upload_to='images/')
+    tasnif = models.CharField(max_length=100, null=True, blank=True)
     description = models.CharField(max_length=100)
     sharh = models.CharField(max_length=100)
     bolib_tolash = models.IntegerField(default=0)
